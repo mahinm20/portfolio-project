@@ -6,3 +6,6 @@ class Blog(models.Model):
     Publication_Date = models.DateField()
     Body =  models.TextField()
     Images = models.ImageField(upload_to='images/')
+
+    def short_summary(self):
+        return (self.Body[:50]+"....")
